@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NefesYazilim - Aynur Gök</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="hepsipay_container">
+        <p class="pos_pay-title">Ödeme seçenekleri</p>
+        <div class="container">
+            <div class="hepsipay_header">
+                <a href="#" class="hepsipay_header-logo">
+                    <img src="./assets/images/logo_hepsipay.svg" alt="logo">
+                </a>
+                <p class="logo-title">Tek tıkla al | Sonra öde | Hızlı iade</p>
+            </div>
+            <div class="switch-button">
+                <input class="switch-button-checkbox" type="checkbox"></input>
+                <label class="switch-button-label" for=""><span class="switch-button-label-span">Kayıtlı kartlarım</span></label>
+            </div>
+            <div class="payment_body">
+                <form class="payment_form" autocomplete="off">
+                    <div class="form_card-number">
+                        <label for="creditcard">Kart numarası</label>
+                        <input id="creditcard" type="text" placeholder="••••  ••••  ••••  ••••">
+                    </div>
+                    <div class="form_card-name">
+                        <label for="cardholder_name">Kart üzerindeki isim</label>
+                        <input id="cardholder_name" type="text" placeholder="Kart sahibinin adı ve soyadı">
+                    </div>
+                    <div class="dateAndCvv">
+                        <div class="date">
+                            <label for="exp">Son kullanma tarihi</label>
+                            <input id="exp" type="text" placeholder="Ay/Yıl">
+                        </div>
+                        <div class="cvv">
+                            <label for="cvv">Güvenlik kodu <i class="ri-information-line"></i></label>
+                            <input id="cvv" type="text" placeholder="CVV/CVC">
+                        </div>
+                    </div>
+                    <div class="security_pay">
+                        <i class="ri-shield-check-fill"></i>
+                        <span>Ödemen 3D Secure onayına gerek kalmadan güvenle gerçekleşecek</span>
+                    </div>
+                    <div class="checkbox_area">
+                        <input type="checkbox" id="chk" name="checkbox" >
+                        <span class="chk_span">Kartımın, sonraki alışverişlerim için Hepsiburada ve Hepsipay'de kaydedilmesini onaylıyorum.</span>
+                    </div>
+                </form>
+                <div class="card_body">
+                    <div class="card_body-area">
+                        <div class="bank_logo">
+                            <img src="./assets/images/finansbank.svg" alt="finansbank">
+                            <img src="./assets/images/card-finans.svg" alt="card-finans">
+                        </div>
+                        <div class="card-no">0000 0000 0000 0000</div>
+                        <div class="card_details">
+                             <div class="card-holders">
+                                <div class="card-holders-name">Furkan Karataş</div>
+                                <div class="card-date">AA/YY</div>
+                             </div>
+                            <div class="paymanent-img">
+                                <img src="./assets/images/mastercard.svg" alt="mastercard" width="50px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="payment_option">
+                <div class="payment_option-info">
+                    <i class="ri-information-line"></i>
+                    <p><span class="detail_span">Şimdi al Şubatta öde</span> Yapı kredi, İş bankası ve Akbank kredi kartlarında geçerlidir. <a href="#">Detaylı bilgi</a></p>
+                </div>
+                <div class="payment_option-detail">
+                    <div class="payIn_advance">
+                        <input type="radio" name="paymentoption" id="">
+                        <div class="payIn_advance-text">
+                            <p>Kart ile peşin öde</p>
+                            <p>Hepsipay ile hızlı ve güvenli öde</p>
+                        </div>
+                    </div>
+                    <div class="installment_payment">
+                        <div class="pay">
+                            <input type="radio" name="paymentoption" id="pay-chk" checked>
+                            <label for="pay-chk">Kart ile öde</label>
+                        </div>
+                        <div class="installment_payment-list">
+                            <div class="list_item">
+                                <div class="list_item-box">
+                                    <input type="radio" name="paybycard" id="item1" checked>
+                                    <label for="item1">Peşin</label>
+                                </div>
+                                <div class="amount">
+                                    <span>6.224,44 TL</span>
+                                    <span>Toplam:6299,01 TL</span>
+                                </div>
+                               
+                            </div>
+                            <div class="list_item">
+                                <div class="list_item-box">
+                                    <input type="radio" name="paybycard" id="item2">
+                                    <label for="item2">2 Taksit</label>
+                                </div>
+                                <div class="amount">
+                                    <span>3.149.59 TL <span>/AY</span></span>
+                                    <span>Toplam:6299,01 TL</span>
+                                </div>
+                            </div>
+                            <div class="list_item">
+                                <div class="list_item-box">
+                                    <input type="radio" name="paybycard" id="item3">
+                                    <label for="item3">3 Taksit</label>
+                                </div>
+                                <div class="amount">
+                                    <span>2.099,44 TL <span>/AY</span></span>
+                                    <span>Toplam:6299,01 TL</span>
+                                </div>
+                            </div>
+                            <div class="list_item">
+                                <div class="list_item-box">
+                                    <input type="radio" name="paybycard" id="item4">
+                                    <label for="item4">6 Taksit</label>
+                                </div>
+                                <div class="amount">
+                                    <span>1.049,44 TL <span>/AY</span></span>
+                                    <span>Toplam:6299,01 TL</span>
+                                </div>
+                            </div>
+                            <div class="list_item">
+                                <div class="list_item-box">
+                                    <input type="radio" name="paybycard" id="item5">
+                                    <label for="item5">9 Taksit</label>
+                                </div>
+                                <div class="amount">
+                                    <span>6.224,44 TL <span>/AY</span></span>
+                                    <span>Toplam:6299,01 TL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buy_now">
+                        <input type="radio" name="paymentoption" id="">
+                        <div class="buy_now-text">
+                            <p>Hemen al sonra öde</p>
+                            <p>12 aya varan taksitle 30 gün sonra öde</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <img src="./assets/images/logo_hepsipay.svg" alt="">
+                <a href="#">ayrıcalıkları</a>
+            </div>
+        </div>
+        </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/inputmask.min.js" integrity="sha512-czERuOifK1fy7MssE4JJ7d0Av55NPiU2Ymv4R6F0mOGpyPUb9HkP9DcEeE+Qj9In7hWQHGg0CqH1ELgNBJXqGA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>

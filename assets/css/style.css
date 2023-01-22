@@ -1,0 +1,492 @@
+@charset "UTF-8";
+* {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+  list-style: none;
+}
+
+input[type=radio], input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  border-color: #7723DB;
+}
+
+.hepsipay_container {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+  align-items: start;
+  margin: 0 auto;
+}
+.hepsipay_container .pos_pay-title {
+  margin: 25px 0 15px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #484D55;
+}
+.hepsipay_container .container {
+  padding: 25px 25px;
+  border-radius: 10px;
+  border: 1px solid #f98864;
+}
+.hepsipay_container .container .hepsipay_header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hepsipay_container .container .hepsipay_header .logo-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #3B126E;
+}
+.hepsipay_container .container .switch-button {
+  margin-top: 20px;
+  overflow: hidden;
+  background: #EEEEEE;
+  border-radius: 10px;
+  color: #484D55;
+  font-weight: 600;
+  width: 220px;
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+  padding-right: 120px;
+  position: relative;
+}
+.hepsipay_container .container .switch-button:before {
+  content: "Yeni kart";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 23px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  z-index: 2;
+}
+.hepsipay_container .container .switch-button-checkbox {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+}
+.hepsipay_container .container .switch-button-checkbox:checked + .switch-button-label:before {
+  left: 166px;
+  transition: left 300ms linear;
+}
+.hepsipay_container .container .switch-button-checkbox + .switch-button-label {
+  position: relative;
+  padding: 15px 0;
+  margin-left: 3px;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+.hepsipay_container .container .switch-button-checkbox + .switch-button-label:before {
+  content: "";
+  background: #FFFFFF;
+  height: 90%;
+  width: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  transition: transform 300ms;
+}
+.hepsipay_container .container .switch-button-checkbox + .switch-button-label .switch-button-label-span {
+  position: relative;
+}
+.hepsipay_container .container .payment_body {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  align-items: flex-start;
+}
+.hepsipay_container .container .payment_body .payment_form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 30px;
+  padding: 0 120px 0 0;
+}
+.hepsipay_container .container .payment_body .payment_form span, .hepsipay_container .container .payment_body .payment_form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.hepsipay_container .container .payment_body .payment_form input[type=text] {
+  text-transform: initial;
+  width: 100%;
+  height: 40px;
+  background-color: #EEEEEE;
+  border-radius: 10px;
+  color: #000000;
+  text-indent: 15px;
+}
+.hepsipay_container .container .payment_body .payment_form input[type=text]::-moz-placeholder {
+  padding-left: 10px;
+  text-indent: 5px;
+}
+.hepsipay_container .container .payment_body .payment_form input[type=text]:-ms-input-placeholder {
+  padding-left: 10px;
+  text-indent: 5px;
+}
+.hepsipay_container .container .payment_body .payment_form input[type=text]::placeholder {
+  padding-left: 10px;
+  text-indent: 5px;
+}
+.hepsipay_container .container .payment_body .payment_form .dateAndCvv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hepsipay_container .container .payment_body .payment_form .security_pay {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  justify-content: center;
+}
+.hepsipay_container .container .payment_body .payment_form .security_pay span {
+  font-size: 12px;
+  display: inline-block;
+  padding: 10px;
+  margin: unset;
+}
+.hepsipay_container .container .payment_body .payment_form .security_pay i {
+  font-size: 20px;
+  color: #8AD67F;
+}
+.hepsipay_container .container .payment_body .payment_form .checkbox_area {
+  display: flex;
+  align-items: center;
+}
+.hepsipay_container .container .payment_body .payment_form .checkbox_area input {
+  position: relative;
+  width: 35px;
+  height: 24px;
+  border-radius: 5px;
+  border: 2px solid #7723db;
+  margin-right: 8px;
+}
+.hepsipay_container .container .payment_body .payment_form .checkbox_area input:checked {
+  background-color: #7723db;
+}
+.hepsipay_container .container .payment_body .payment_form .checkbox_area input:checked:before {
+  content: "✓";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+}
+.hepsipay_container .container .payment_body .payment_form .checkbox_area .chk_span {
+  display: inline;
+  font-size: 12px;
+  font-weight: 500;
+  margin: unset;
+}
+.hepsipay_container .container .payment_body .payment_form .detail-info {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: flex-start;
+  font-size: 13px;
+}
+.hepsipay_container .container .payment_body .payment_form .detail-info .detail_span {
+  display: inline-block;
+}
+.hepsipay_container .container .payment_body .card_body-area {
+  border: 1px solid #EEEEEE;
+  padding: 10px 20px;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  box-shadow: 2px 2px 5px #ccc;
+  border-radius: 15px;
+}
+.hepsipay_container .container .payment_body .card_body-area .bank_logo {
+  width: 130px;
+}
+.hepsipay_container .container .payment_body .card_body-area .bank_logo img {
+  width: 100%;
+  max-width: 100%;
+}
+.hepsipay_container .container .payment_body .card_body-area .bank_logo img:last-child {
+  width: 80px;
+  margin-top: 10px;
+}
+.hepsipay_container .container .payment_body .card_body-area .card-no {
+  font-size: 12px;
+  font-weight: 700;
+  color: #484D55;
+}
+.hepsipay_container .container .payment_body .card_body-area .card_details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+.hepsipay_container .container .payment_body .card_body-area .card_details .card-holders {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hepsipay_container .container .payment_body .card_body-area .card_details .card-holders-name {
+  font-size: 14px;
+  color: #484D55;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 150px;
+}
+.hepsipay_container .container .payment_body .card_body-area .card_details .card-holders .card-date {
+  font-size: 12px;
+  font-weight: 700;
+  color: #484D55;
+}
+.hepsipay_container .container .payment_option {
+  width: 100%;
+  margin-top: 20px;
+}
+.hepsipay_container .container .payment_option-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #484D55;
+}
+.hepsipay_container .container .payment_option-info span {
+  color: #f37f12;
+  font-weight: 500;
+}
+.hepsipay_container .container .payment_option-info a {
+  color: #484D55;
+  text-decoration: underline;
+}
+.hepsipay_container .container .payment_option-detail {
+  margin-top: 20px;
+}
+.hepsipay_container .container .payment_option-detail .payIn_advance {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #E0E0CD;
+  border-top: 1px solid #E0E0CD;
+  padding: 20px 0;
+}
+.hepsipay_container .container .payment_option-detail .payIn_advance input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #7723db;
+  position: relative;
+}
+.hepsipay_container .container .payment_option-detail .payIn_advance input[type=radio]:checked:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  background-color: #7723db;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.hepsipay_container .container .payment_option-detail .payIn_advance-text {
+  display: flex;
+  flex-direction: column;
+}
+.hepsipay_container .container .payment_option-detail .payIn_advance-text p:first-child {
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+.hepsipay_container .container .payment_option-detail .payIn_advance-text p:last-child {
+  font-size: 13px;
+  font-weight: 400;
+  color: #484D55;
+}
+.hepsipay_container .container .payment_option-detail .buy_now {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.hepsipay_container .container .payment_option-detail .buy_now input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #7723db;
+  position: relative;
+}
+.hepsipay_container .container .payment_option-detail .buy_now input[type=radio]:checked:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  background-color: #7723db;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.hepsipay_container .container .payment_option-detail .buy_now-text {
+  display: flex;
+  flex-direction: column;
+}
+.hepsipay_container .container .payment_option-detail .buy_now-text p:first-child {
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+.hepsipay_container .container .payment_option-detail .buy_now-text p:last-child {
+  font-size: 13px;
+  font-weight: 400;
+  color: #484D55;
+}
+.hepsipay_container .container .payment_option .installment_payment {
+  margin-top: 20px;
+}
+.hepsipay_container .container .payment_option .installment_payment .pay {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.hepsipay_container .container .payment_option .installment_payment .pay label {
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+.hepsipay_container .container .payment_option .installment_payment .pay input[type=radio] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #7723db;
+  position: relative;
+}
+.hepsipay_container .container .payment_option .installment_payment .pay input[type=radio]:checked:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  background-color: #7723db;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.hepsipay_container .container .payment_option .installment_payment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0 10px 20px;
+}
+.hepsipay_container .container .payment_option .installment_payment-list input {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border-radius: 50px;
+  border: 2px solid #7723db;
+  margin-right: 8px;
+}
+.hepsipay_container .container .payment_option .installment_payment-list input:checked {
+  background-color: #7723db;
+}
+.hepsipay_container .container .payment_option .installment_payment-list input:checked:before {
+  content: "✔";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+}
+.hepsipay_container .container .payment_option .installment_payment-list .list_item {
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #E0E0CD;
+}
+.hepsipay_container .container .payment_option .installment_payment-list .list_item-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.hepsipay_container .container .payment_option .installment_payment-list .list_item-box label {
+  font-size: 18px;
+  opacity: 0.8;
+  font-weight: 600;
+}
+.hepsipay_container .container .payment_option .installment_payment-list .list_item .amount {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.hepsipay_container .container .payment_option .installment_payment-list .list_item .amount span:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+.hepsipay_container .container .payment_option .installment_payment-list .list_item .amount span:last-child {
+  font-size: 13px;
+  font-weight: 400;
+  color: #484D55;
+  padding: 20px -10px 10px 20px;
+}
+.hepsipay_container .container .footer {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 5px;
+}
+.hepsipay_container .container .footer a {
+  font-size: 12px;
+  text-transform: lowercase;
+}
+.hepsipay_container .container .footer img {
+  width: 50px;
+  height: 30px;
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

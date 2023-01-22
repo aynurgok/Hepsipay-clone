@@ -1,0 +1,508 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+    list-style: none;
+  }
+  
+  $titleColor:#484D55;
+  $menuColor:#3B126E;
+  $checkboxLabelColor:#EEEEEE;
+  $cardInputColor:#E8F0FE;
+  $securitycolor:#8AD67F;
+  $orangeColor:#f37f12;
+  $circleColor:#7723DB;
+  $whiteColor:#FFFFFF;
+  $borderColor:#E0E0CD;
+  
+  input[type="radio"], input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border-color:$circleColor;
+  }
+
+.hepsipay_container {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    align-items: start;
+    margin: 0 auto;
+    .pos_pay-title {
+        margin: 25px 0 15px 0;
+        font-size: 15px;
+        font-weight: 600;
+        color:$titleColor;
+    }
+    .container {
+        padding: 25px 25px;
+        border-radius: 10px;
+        border:1px solid #f98864;
+        .hepsipay_header{
+            display: flex;
+            align-items: center;
+            gap:10px;
+            .logo-title {
+                font-size: 11px;
+                font-weight: 700;
+                color:$menuColor;
+            }
+        }
+
+        .switch-button {
+            margin-top:20px;
+            overflow: hidden;
+            background: $checkboxLabelColor;
+            border-radius: 10px;
+            color:$titleColor;
+            font-weight: 600;
+            width: 220px;
+            text-align: center;
+            font-size: 12px;
+            position: relative;
+            padding-right: 120px;
+            position: relative;
+            &:before {
+              content: "Yeni kart";
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 23px;
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: end;
+              z-index: 2;
+            //   pointer-events: none;
+            }
+            &-checkbox {
+              cursor: pointer;
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              z-index: 2;
+              &:checked + .switch-button-label:before {
+                left: 166px;
+                transition: left 300ms linear;
+              }
+          
+              & + .switch-button-label {
+                position: relative;
+                padding: 15px 0;
+                margin-left: 3px;
+                display: block;
+                user-select: none;
+                pointer-events: none;
+          
+                &:before {
+                  content: "";
+                  background: $whiteColor;
+                  height: 90%;
+                  width: 100px;
+                  position: absolute;
+                  left: 50%;
+                  top: 50%;
+                  transform: translate(-50%, -50%);
+                  border-radius: 10px;
+                  transition: transform 300ms;
+                }
+          
+                .switch-button-label-span {
+                  position: relative;
+                }
+              }
+            }
+        }
+
+        .payment_body {
+            display: flex;
+            justify-content: space-between;
+            margin-top:30px;
+            align-items: flex-start;
+            .payment_form {
+                display: flex;
+                flex-direction: column;
+                width: 50%;
+                gap:30px;
+                padding: 0 120px 0 0;
+                span, label {
+                    display: block;
+                    font-size: 14px;
+                    margin-bottom: 10px;
+
+                }
+                input[type="text"] {
+                    text-transform: initial;
+                    width: 100%;
+                    height: 40px;
+                    background-color: $checkboxLabelColor;
+                    border-radius: 10px;
+                    color:#000000;
+                    text-indent: 15px;
+                    &::placeholder {
+                        padding-left:10px;
+                        text-indent: 5px;
+                    }
+                }
+                .dateAndCvv {
+                    display: flex;
+                    align-items: center;
+                    gap:10px;
+                }
+                .security_pay {
+                    display: flex;
+                    align-items: center;
+                    gap:2px;
+                    justify-content: center;
+                    span {
+                        font-size: 12px;
+                        display: inline-block;
+                        padding:10px;
+                        margin: unset;
+                    }
+                    i {
+                        font-size: 20px;
+                        color:$securitycolor;
+                    }
+                }
+                .checkbox_area {
+                    display: flex;
+                    align-items: center;
+                    input {
+                        position:relative;
+                        width: 35px;
+                        height: 24px;
+                        border-radius: 5px;
+                        border: 2px solid #7723db;
+                        margin-right: 8px;
+                        &:checked {
+                            background-color: #7723db;
+                            &:before {
+                                content: "✓";
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto;
+                                color: white;
+                            }
+                        }
+                    }
+                    .chk_span {
+                        display: inline;
+                        font-size: 12px;
+                        font-weight: 500;
+                        margin: unset;
+                    }
+                    
+                }
+
+                .detail-info {
+                    width: 100%;
+                    display: flex;
+                    gap:5px;
+                    align-items: flex-start;
+                    font-size: 13px;
+                    .detail_span {
+                        display: inline-block;
+                    }
+                }
+            }
+            .card_body {
+                &-area {
+                    border:1px solid $checkboxLabelColor;
+                    padding: 10px 20px ;
+                    margin-right: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap:10px;
+                    box-shadow: 2px 2px 5px #ccc;
+                    border-radius: 15px;
+                    .bank_logo {
+                        width: 130px;
+                        img {
+                            width: 100%;
+                            max-width: 100%;
+                            &:last-child {
+                                width: 80px;
+                                margin-top: 10px;
+                            }
+                        }
+                    }
+                    .card-no{
+                        font-size: 12px;
+                        font-weight: 700;
+                        color:$titleColor;
+                    }
+                    .card_details {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap:50px;
+                        .card-holders {
+                            display: flex;
+                            flex-direction: column;
+                            gap:10px;
+                            &-name {
+                                font-size: 14px;
+                                color:$titleColor;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                width: 150px;
+                            }
+                            .card-date {
+                                font-size: 12px;
+                                font-weight: 700;
+                                color:$titleColor;
+                            }
+                           
+                        }
+                    }
+                   
+                }
+            }
+        }
+
+        .payment_option {
+            width: 100%;
+            margin-top:20px;
+            &-info {
+                display: flex;
+                align-items: center;
+                gap:5px;
+                font-size:14px;
+                font-weight: 400;
+                color:$titleColor;
+                span {
+                    color:$orangeColor;
+                    font-weight: 500;
+                }
+                a {
+                    color:$titleColor;
+                    text-decoration: underline;
+                }
+            }
+            &-detail {
+                margin-top:20px;
+                .payIn_advance {
+                    display: flex;
+                    align-items: center;
+                    gap:10px;
+                    border-bottom:1px solid $borderColor;
+                    border-top:1px solid $borderColor;
+                    padding:20px 0;
+                    input[type="radio"] {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 20px;
+                        height: 20px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        border: 2px solid #7723db;
+                        position: relative;
+                    }
+                    input[type="radio"]:checked:before {
+                        content: "";
+                        width: 10px;
+                        height: 10px;
+                        display: block;
+                        background-color: #7723db;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 50%;
+                    }
+                    &-text {
+                        display: flex;
+                        flex-direction: column;
+                        p {
+                            &:first-child {
+                                font-size: 14px;
+                                font-weight:700;
+                                opacity: .8;
+                            }
+                            &:last-child {
+                                font-size: 13px;
+                                font-weight: 400;
+                                color:$titleColor;
+                            }
+                        }
+                    }
+                }
+                .buy_now {
+                    display: flex;
+                    align-items: center;
+                    gap:10px;
+                    margin-top:10px;
+                    input[type="radio"] {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 20px;
+                        height: 20px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        border: 2px solid #7723db;
+                        position: relative;
+                    }
+                    input[type="radio"]:checked:before {
+                        content: "";
+                        width: 10px;
+                        height: 10px;
+                        display: block;
+                        background-color: #7723db;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 50%;
+                    }
+                    &-text {
+                        display: flex;
+                        flex-direction: column;
+                        p {
+                            &:first-child {
+                                font-size: 14px;
+                                font-weight: 700;
+                                opacity: .8;
+                            }
+                            &:last-child {
+                                font-size: 13px;
+                                font-weight: 400;
+                                color:$titleColor;
+                            }
+                        }
+                    }
+                }
+            }
+            .installment_payment {
+                margin-top:20px;
+                .pay {
+                    display: flex;
+                    align-items: center;
+                    gap:10px;
+                    margin-bottom:20px;
+                    label {
+                        font-size: 14px;
+                        font-weight: 700;
+                        opacity: .8;
+                    }
+                    input[type="radio"] {
+                        -webkit-appearance: none;
+                        appearance: none;
+                        width: 22px;
+                        height: 22px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        border: 2px solid #7723db;
+                        position: relative;
+                    }
+                    input[type="radio"]:checked:before {
+                        content: "";
+                        width: 10px;
+                        height: 10px;
+                        display: block;
+                        background-color: #7723db;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        border-radius: 50%;
+                    }
+                }
+                &-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap:10px;
+                    padding:10px 0 10px 20px;
+                    input {
+                        position:relative;
+                        width: 22px;
+                        height: 22px;
+                        border-radius: 50px;
+                        border: 2px solid #7723db;
+                        margin-right: 8px;
+                        &:checked {
+                            background-color: #7723db;
+                            &:before {
+                                content: "✔";
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                margin: 0 auto;
+                                color: white;
+                            }
+                        }
+                    }
+                    .list_item {
+                        padding:15px 0;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-bottom:1px solid $borderColor;
+                        &-box {
+                            display: flex;
+                            gap:10px;
+                            align-items: center;
+                            label {
+                                font-size: 18px;
+                                opacity: .8;
+                                font-weight: 600;
+                            }
+                        }
+                        .amount {
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            span {
+                                &:first-child {
+                                    font-size: 18px;
+                                    font-weight: 700;
+                                    opacity: .8;
+                                }
+                                &:last-child {
+                                    font-size: 13px;
+                                    font-weight: 400;
+                                    color:$titleColor;
+                                    padding:20px -10px 10px 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer {
+            display: flex;
+            align-items:center;
+            justify-content: end;
+            gap:5px;
+            a {
+                font-size: 12px;
+                text-transform: lowercase ;
+            }
+            img {
+                width: 50px;
+                height: 30px;
+            }
+        }
+    }
+      
+}
+
+@media screen and (max-width: 1100px) {
+    .container {
+        width: 100%;
+    }
+}
+
+
